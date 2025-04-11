@@ -1,156 +1,151 @@
-@import url('https://fonts.googleapis.com/css2?family=Underdog&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
 :root {
-    --background-color: #000000;
-    --primary-color: #222222;
-    --secondary-color: #666666;
-    --accent-color: #1DCD9F;
-    --text-color: #dddddd;
-    --alert-colro: #f00;
+    --color-bg: #000957;
+    --color-primario: #344CB7;
+    --color-secundario: #577BC1;
+    --color-acentuar: #62a2ec;
+    --color-texto: #FFEB00;
+    --color-alerta: rgb(232, 121, 87);
 }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
-    font-family: Underdog, Helvetica, sans-serif;
-    font-size: 16px;
-    color: var(--text-color);
+    font-family: "Noto Sans", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: var(--color-texto);
 }
+
 body {
-    background-color: var(--background-color);
+    background-color: var(--color-bg);
     padding: 10px;
     min-height: 100vh;
 }
-#envoltura {
-    margin: 0 auto;
-    width: 100%;
-    max-width: 700px;
-}
+
 h1 {
-    margin-top: 100px;
-    margin-bottom: 100px;
+    margin: 50px 0;
     font-size: 4rem;
-    font-weight: 700;
-    text-transform: uppercase;
+    font-weight: 800;
+    font-family: Audiowide, Arial, Helvetica, sans-serif;
     text-align: center;
-    color: var(--accent-color);
+    color: var(--color-acentuar);
 }
+
+#envoltura {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
 #txt_input {
-    padding: 12px 20px;
+    padding: 15px 20px;
     width: 100%;
-    background: none;
-    border: 2px solid var(--secondary-color);
-    border-radius: 100px;
+    border: 3px solid var(--color-secundario);
+    border-radius: 20px;
     font: inherit;
-    color: var(--text-color);
-    caret-color: var(--accent-color);
+    color: var(--color-texto);
+    background: none;
+    caret-color: var(--color-acentuar);
 }
+
 #txt_input:focus {
     outline: none;
 }
-form {
+
+#formulario_input {
     position: relative;
 }
+
 #btn_agregar {
     position: absolute;
     top: 0;
     right: 0;
 
+    padding: 0 25px;
     height: 100%;
-    background-color: var(--accent-color);
-    padding: 0 30px;
     text-transform: uppercase;
     border: none;
-    border-radius: 100px;
-    font: inherit;
-    font-weight: 600;
-    color: var(--background-color);
     cursor: pointer;
+    background-color: var(--color-acentuar);
+    color: var(--color-bg);
+    border-radius: 20px;
+    font: inherit;
+    font-weight: bold;    
 }
-ul {
+
+#lista_todo {
     list-style-type: none;
+    margin-top: 25px;
 }
+
 .item_todo {
-    margin-bottom: 10px;
+    background-color: var(--color-primario);
     padding: 0 10px;
-    background-color: var(--primary-color);
-    border-radius: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
     min-height: 60px;
     line-height: 60px;
-    position: relative;
-}
-.check_marcador {
-    display: block;
-    float: left;
-    clear: none;
-    width: 10%;
-    text-align: center;
-    color: var(--accent-color);
-}
-.txt_todo {
-    padding: 0px;
-    padding-right: 0;
-    transition: 0.2s ease;
-    width: 80%;
-    min-height: 60px;
-
-    display: block;
-    float: left;
-    clear: none;
-}
-.btn_eliminar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 10%;
-    min-height: 60px;
-    line-height: 60px;    
-
-    display: block;
-    float: right;
-    clear: none;
-}
-
-.btn_eliminar i {
-    color: var(--secondary-color);
-}
-
-.btn_eliminar:hover{
-    i {
-        color: var(--alert-colro);
-
-    }
-}
-
-.check:checked ~ .check_marcador i {
-    color: var(--accent-color);
-}
-
-.check:checked ~ .txt_todo {
-    text-decoration: line-through;
-    color: var(--secondary-color)
 }
 
 .check {
     display: none;
 }
 
-@media(max-width: 500px) {
-    html {
-        font-size: 12px;
-    }
+.check_marcador {
+    display: block;
+    clear: none;
+    float: left;
+    width: 10%;
+    text-align: center;
+    color: var(--color-acentuar);
+}
 
-    #btn_agregar {
-        position: unset;
-        width: 100%;
-        margin-top: 10px;
-        padding: 15px;
-        height: auto;
-    }
+.check_marcador i {
+    font-size: 1.2rem;
+}
 
-    h1 {
-        margin-top: 50px;
-        font: 15vw;
+.txt_todo {
+    display: block;
+    clear: none;
+    float: left;
+    width: 80%;
+    
+}
+
+.btn_eliminar {
+    display: block;
+    clear: none;
+    float: left;
+    width: 10%;
+    height: 60px;
+    border: none;
+    background: none;
+    cursor: pointer;
+} 
+
+.btn_eliminar i {
+    color: var(--color-secundario);
+    font-size: 1.4rem;
+}
+
+.btn_eliminar:hover {
+    i {
+        color: var(--color-alerta);
     }
 }
+
+.check:checked ~ .check_marcador i {
+    color: var(--color-alerta);
+}
+
+.check:checked ~ .txt_todo {
+    text-decoration: line-through;
+    color: var(--color-secundario);
+}
+
+
+
